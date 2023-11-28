@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov 28 10:05:28 2023
-
-@author: Luiz
-"""
-
 # Data Fecth
 
 Data management within a file system often involves tasks like organizing files, copying directories, and processing data efficiently. This repository provides a set of Python scripts leveraging the os and shutil libraries to streamline these tasks.

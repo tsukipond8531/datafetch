@@ -73,9 +73,6 @@ def move_files(PATH_IN):
         shutil.move(file_path, dst)
        
         
-      
-PATH_IN = 'D:\\database\\GNSS\\rinex\\bolivia\\tmp5XTjSG\\'
-
 def unzip_and_convert(PATH_IN):
     for file in os.listdir(PATH_IN):
         
@@ -95,20 +92,22 @@ def unzip_and_convert(PATH_IN):
                 print(file)
                 file_out = wb.unzip_ZIP(file_path)
                 wb.crx2rnx(file_out)
+                
+            # if not file.endswith('o'):
+            #     os
+                
             
         except:
             print(file_path, 'doest work')
             continue
             
-        
 
-
-def run(year = 2021, root = 'D:\\'):
+def run(year = 2021, last = 1, root = 'D:\\'):
     
     print('[check unzipped rinex]', year)
     
     
-    for doy in tqdm(range(1, 315)):
+    for doy in tqdm(range(279, 315)):
         
         PATH_IN = gs.paths(
             year, doy, root
@@ -116,4 +115,17 @@ def run(year = 2021, root = 'D:\\'):
         
         unzip_and_convert(PATH_IN)
         
-# run(year = 2023)
+run(year = 2023)
+# year = 2023
+# doy = 278
+# PATH_IN = gs.paths(
+#     year, doy
+#     ).rinex
+
+# for file in os.listdir(PATH_IN):
+    
+    
+
+# unzip_and_convert(PATH_IN)
+ 
+ 
